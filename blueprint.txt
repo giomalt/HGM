@@ -1,0 +1,12 @@
+30 logo
+120 logo_full
+56 lines_rayleigh
+96 alphabet
+1764 lines_pair
+60 square
+441 square_part
+1000 rand_ellipse
+2000 rand_ellipses
+1000  rand_line
+2000  rand_lines
+20000 rand_matrix
