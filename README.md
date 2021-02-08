@@ -1,16 +1,23 @@
 # HGM
+Programs and neural network (NN) used to perform **Hermite Gaussian Microscopy (HGM)**, as presented in the paper **"Super-resolution linear optical microscopy in the far field"**.
 
-Programs and neural network used to perform **Hermite Gaussian Microscopy (HGM)** as presented in the paper **"Super-resolution linear optical microscopy in the far field"**.
+###Main programs###
+1. ```main_processing.ipynb```
+A) Generate sources (train/dev/test datasets)   
+B) Simulate HGM reconstructions and camera images   
+C) Create images and sequences for the Digital Micromirror Device (DMD)      
+D) Process experimental oscilloscope data to produce the tensors which are inputs to the NN   
 
-1. **main_processing.ipynb**
+2. ```experiment/acquisition_DMD_pattern_on_fly.ipynb```
+Procedure to experimentally perform HGM: drive the DMD in pattern-on-the-fly mode, read oscilloscope and power spectrum analyzer data, periodically perform the automatic interferometer alignment procedure.
 
-Generate sources, simulate HGM and direct imaging, create the images and sequences for the Digital Micromirror Device (DMD), process experimental oscilloscope data to produce the tensors to feed the neural network (NN) input.
+3. ```neural_network/model.pynb```
+Deep learning model to map the acquired experimental photocurrents to the simulated HGM reconstruction images.
 
-2. **acquisition_DMD_pattern_on_fly.ipynb**
 
-Implement HGM in the lab.
-Drive DMD, oscilloscope and power spectrum analyzer and includes the automatic interferometer alignment procedure.
+###Other programs###
+```experiment/acquire_camera_images.ipynb```
+Automatically acquire camera images of the test dataset by performing a scan acquisition
 
-3. **neural_network/model.pynb**
-
-Train the NN to learn HGM underlying model from the simulated and acquired experimental data.
+```deconvolution/deconvolution.ipynb```
+Deconvolve camera images via Richardson-Lucy (RL) algorithm
